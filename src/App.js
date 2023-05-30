@@ -1,5 +1,8 @@
+import DiceFieldDice from './components/DiceFieldDice';
 import logo from './logo.svg';
 import './App.css';
+
+console.log(DiceFieldDice); 
 
 function App() {
   return (
