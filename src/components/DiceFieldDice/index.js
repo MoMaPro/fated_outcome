@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import d6 from "./images/D6.png";
+import diceFace from "./DiceImages";
 //container that holds dice
+//style={{ backgroundImage: `url(${dFace})` }}
 
 const DiceFieldDice = ({ dType, value, handleClick }) => {
+  const dFace = diceFace(dType);
   return (
     <DiceStyle>
       <div>
@@ -23,8 +26,8 @@ const DiceStyle = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${d6});
-  width: 7rem;
-  height: 7rem;
+  width: 150px;
+  height: 150px;
 
   div {
     font-size: 1.5rem;
