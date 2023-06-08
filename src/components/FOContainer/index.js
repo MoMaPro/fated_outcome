@@ -1,15 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import DiceFieldDice from "../DiceFieldDice";
 import randomizor from "./logic";
 
 const FOContainer = () => {
-  const { dice, setDice } = useState();
-  console.log(randomizor());
+  const [dice, setDice] = useState([{ dType: "d6", value: randomizor("d6") }]);
+
   return (
     <div style={{ background: "pink" }}>
-      <DiceFieldDice dType="d10" value={randomizor("d10")} />
-      <DiceFieldDice dType="d6" value={randomizor("d6")} />
-      <DiceFieldDice dType="d8" value={randomizor("d8")} />
+      {dice &&
+        dice.map((item, index) => (
+          <DiceFieldDice key={index} dType={item.dType} value={item.value} />
+        ))}
     </div>
   );
 };
