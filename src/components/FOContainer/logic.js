@@ -20,11 +20,12 @@ export default function randomizor(dType) {
       d = 20;
       break;
     case "d100":
-      d = 100;
+      d = 10;
       break;
     default:
       d = 6;
       break;
   }
-  return Math.ceil(Math.random() * d);
+  let result = Math.ceil(Math.random() * d);
+  return dType == "d100" ? (result == 10 ? "00" : result * 10) : result;
 }
