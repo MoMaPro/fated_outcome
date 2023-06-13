@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import randomizor from "./logic";
 import DiceField from "../DiceField";
 
@@ -13,9 +13,18 @@ const FOContainer = () => {
     { dType: "d100", value: randomizor("d100") },
   ]);
 
+  const handleRemoval = (dIndex) => {
+    console.log(dIndex);
+    setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
+  };
+
+  // useEffect(() => {
+  //   setDice((prevDice) => [prevDice[0]]);
+  // }, []);
+
   return (
     <div style={{ background: "lightgreen" }}>
-      <DiceField dice={dice} />
+      <DiceField dice={dice} handleRemoval={handleRemoval} />
     </div>
   );
 };

@@ -2,9 +2,9 @@ import styled from "styled-components";
 import diceFace from "./DiceImages";
 //container that holds dice
 
-const DiceFieldDice = ({ dType, value, handleClick }) => {
+const DiceFieldDice = ({ dType, value, handleClick, index }) => {
   return (
-    <DiceStyle dType={dType}>
+    <DiceStyle dType={dType} onClick={() => handleClick(index)}>
       <div>
         <h3>{value}</h3>
       </div>
