@@ -8,8 +8,13 @@ const Inventory = ({ handleAdd }) => {
         <thead>
           {" "}
           <tr>
-            <th>Dice Inventory</th>
-            <th>We guarantee our dice are balanced :3 !</th>
+            <th colSpan="2">
+              <h3>Dice Inventory</h3>
+              <h4>
+                We <span style={{ fontSize: "0.3rem" }}>can't</span> guarantee
+                our dice are balanced :3 !
+              </h4>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +28,7 @@ const Inventory = ({ handleAdd }) => {
   );
 };
 
+//<h4>We guarantee our dice are balanced :3 !</h4>
 export default Inventory;
 
 // background-image: ${({ dType }) => `url(${getDiceShape(dType)})`};
@@ -30,6 +36,9 @@ const InventoryStyle = styled.div`
   table {
     background: brown;
     border: 1px solid black;
+  }
+  td {
+    border: 1px solid #333;
   }
 `;
 

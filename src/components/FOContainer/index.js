@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import randomizor from "./logic";
 import DiceField from "../DiceField";
-import "tachyons";
 import styled from "styled-components";
+import Inventory from "../Inventory";
 
 const FOContainer = () => {
   const [dice, setDice] = useState([
@@ -31,6 +31,7 @@ const FOContainer = () => {
     <div>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
       <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
+      <Inventory></Inventory>
     </div>
   );
 };
