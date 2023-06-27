@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import randomizor from "./logic";
 import DiceField from "../DiceField";
+import "tachyons";
+import styled from "styled-components";
 
 const FOContainer = () => {
   const [dice, setDice] = useState([
@@ -17,14 +19,25 @@ const FOContainer = () => {
     setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
   };
 
-  // useEffect(() => {
-  //   setDice((prevDice) => [prevDice[0]]);
-  // }, []);
+  const diceChange = () => {
+    setDice((oldDice) =>
+      oldDice.map(({ dType }) => {
+        return { dType: dType, value: randomizor(dType) };
+      })
+    );
+  };
 
   return (
-    <div style={{ background: "lightgreen" }}>
+    <div>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
+      <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
     </div>
   );
 };
 export default FOContainer;
+
+const ButtonStyle = styled.button`
+  border-radius: 30px;
+  border: solid purple 5px;
+  color: purple;
+`;
