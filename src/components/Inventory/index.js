@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import getDiceShape from "../DiceFieldDice/DiceImages";
+// import getDiceShape from "../DiceFieldDice/DiceImages";
 import InventoryItem from "./InventoryItem";
 
 const Inventory = ({ handleAdd }) => {

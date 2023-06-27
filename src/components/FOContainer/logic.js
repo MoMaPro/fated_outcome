@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 const DiceState = () => {
   const [dice, setDice] = useState([]);
+
+  useEffect(() => {
+    if (dice.length > 0)
+      console.log(dice.reduce((acc, die) => acc + die.value, 0));
+  }, [dice]);
 
   const handleRemoval = (dIndex) => {
     setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
