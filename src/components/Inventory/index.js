@@ -1,29 +1,35 @@
 import styled from "styled-components";
 import getDiceShape from "../DiceFieldDice/DiceImages";
+import InventoryItem from "./InventoryItem";
 
 const Inventory = ({ handleAdd }) => {
   return (
     <InventoryStyle>
-      <table>
-        <thead>
-          {" "}
-          <tr>
-            <th colSpan="2">
-              <h3>Dice Inventory</h3>
-              <h4>
-                We <span style={{ fontSize: "0.3rem" }}>can't</span> guarantee
-                our dice are balanced :3 !
-              </h4>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>test case 0</td>
-            <td>test case 1</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="header">
+        <h3>Dice Inventory</h3>
+        <h4>
+          We <span style={{ fontSize: "0.3rem" }}>can't</span> guarantee our
+          dice are balanced :3 !
+        </h4>
+      </div>
+      <div className="table">
+        <div className="row">
+          <InventoryItem handleAdd={handleAdd} dType="d4" />
+
+          <InventoryItem handleAdd={handleAdd} dType="d6" />
+
+          <InventoryItem handleAdd={handleAdd} dType="d8" />
+
+          <InventoryItem handleAdd={handleAdd} dType="d10" />
+        </div>
+        <div className="row">
+          <InventoryItem handleAdd={handleAdd} dType="d12" />
+
+          <InventoryItem handleAdd={handleAdd} dType="d20" />
+
+          <InventoryItem handleAdd={handleAdd} dType="d100" />
+        </div>
+      </div>
     </InventoryStyle>
   );
 };
@@ -33,12 +39,20 @@ export default Inventory;
 
 // background-image: ${({ dType }) => `url(${getDiceShape(dType)})`};
 const InventoryStyle = styled.div`
-  table {
-    background: brown;
-    border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: solid black 3px;
+  .header {
   }
-  td {
-    border: 1px solid #333;
+  .table {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
