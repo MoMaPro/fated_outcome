@@ -21,7 +21,15 @@ const DiceState = () => {
       })
     );
   };
-  return { dice, handleRemoval, diceChange };
+
+  const handleAdd = (dType) => {
+    setDice((prevDice) => [
+      ...prevDice,
+      { dType: dType, value: randomizor(dType) },
+    ]);
+  };
+
+  return { dice, handleRemoval, diceChange, handleAdd };
 };
 
 function randomizor(dType) {

@@ -5,12 +5,12 @@ import styled from "styled-components";
 import Inventory from "../Inventory";
 
 const FOContainer = () => {
-  const { dice, handleRemoval, diceChange } = DiceState();
+  const { dice, handleRemoval, diceChange, handleAdd } = DiceState();
   return (
     <div>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
       <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
-      <Inventory></Inventory>
+      <Inventory handleAdd={handleAdd}></Inventory>
     </div>
   );
 };
