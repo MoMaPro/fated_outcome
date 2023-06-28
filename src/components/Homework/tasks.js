@@ -2,7 +2,7 @@ const tasks = [
   {
     title: "task_0: example-properties",
     summary:
-      "Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties. Place the element inside this element's solution property",
+      "Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties.",
   },
   {
     title: "task_1: Modify State",
