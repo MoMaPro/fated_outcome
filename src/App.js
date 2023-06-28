@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { FOContainer, Homework } from "./components";
 import { DiceState } from "./components/FOContainer/logic";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -11,15 +12,7 @@ function App() {
         <Route path="/" element={<FOContainer diceState={diceState} />} />
         <Route path="/homework" element={<Homework />} />
       </Routes>
-      <footer style={{ position: "absolute", bottom: "10px" }}>
-        <Link style={{ margin: "5px" }} to="/">
-          home
-        </Link>
-
-        <Link style={{ margin: "5px" }} to="/homework">
-          homework
-        </Link>
-      </footer>
+      <Footer />
     </div>
   );
 }
