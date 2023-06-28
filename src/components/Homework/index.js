@@ -10,12 +10,19 @@ const Homework = () => {
         <h1>HOMEWORK</h1>
         <ul className="hd-ul">
           <li className="hd-li">
-            Add your logic to the task in components/Homework/solutions.js
+            Add your logic to the task in{" "}
+            <strong>components/Homework/solutions.js</strong>
           </li>
+          <pre>
+            <code>{codeSnippet1}</code>
+          </pre>
           <li className="hd-li">
-            Render your Element within the corresponding TaskItem Element in
-            components/Homework/index.js
+            Render your Element within the corresponding TaskItem Element in{" "}
+            <strong>components/Homework/index.js</strong>
           </li>
+          <pre>
+            <code>{codeSnippet2}</code>
+          </pre>
         </ul>
       </header>
 
@@ -28,10 +35,9 @@ const Homework = () => {
         </li>{" "}
         <li className="hw-ul">
           {/* TASK 1*/}
-          <TaskItem
-            title={tasks[1].title}
-            summary={tasks[1].summary}
-          ></TaskItem>
+          <TaskItem title={tasks[1].title} summary={tasks[1].summary}>
+            <Solutions.Task1Solution />
+          </TaskItem>
         </li>{" "}
         <li className="hw-ul">
           {/* TASK 2*/}
@@ -86,26 +92,35 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-
-  .header {
-  }
+  justify-content: space-around;
 
   .hd-ul {
+    pre {
+      font-size: 0.7rem;
+      color: red;
+    }
   }
-
-  .hd-li {
-  }
-
-  .hw-ul {
-  }
-
-  .hw-li {
-  }
-
   @media (min-width: 800px) {
     header {
       width: 300px;
     }
   }
 `;
+
+const codeSnippet1 = `const Task0Solution = ({ name, age }) => {
+  //the style for this was created below the export
+  return (
+    <Task0Style>
+      my name is {name}. I have {age} cats.
+    </Task0Style>
+  );
+};`;
+
+const codeSnippet2 = `
+<li className="hw-ul">
+{/* TASK 0*/}
+<TaskItem title={tasks[0].title} summary={tasks[0].summary}>
+  <Solutions.Task0Solution name="Marie" age={3} />{" "}
+</TaskItem>
+</li>{" "}
+};`;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 //Place your logic in in the function
 const Task0Solution = ({ name, age }) => {
@@ -10,24 +11,66 @@ const Task0Solution = ({ name, age }) => {
   );
 };
 
-//second example
+//Place your logic in in the function
 const Task1Solution = () => {
-  //logic here
+  const [state] = useState(1);
+
+  const handleClick = () => {};
+
+  return (
+    <button onClick={handleClick}>
+      <strong>{state}</strong>
+    </button>
+  );
 };
 
-const Task2Solution = {
-  //logic here
+//Place your logic in in the function
+const Task2Solution = () => {
+  return 1;
 };
 
-const Task3Solution = {
+///TASK 2 HELPER FUNCTION
+const helper2 = () => {};
+
+//Place your logic in in the function
+const Task3Solution = () => {
   //logic here
+  return 1;
+};
+
+//Place your logic in in the function
+const Task4Solution = () => {
+  //logic here
+  return 1;
+};
+
+//Place your logic in in the function
+const Task5Solution = () => {
+  //logic here
+  return 1;
+};
+
+//Place your logic in in the function
+const Task6Solution = () => {
+  //logic here
+  return 1;
+};
+
+//Place your logic in in the function
+const Task7Solution = () => {
+  //logic here
+  return 1;
 };
 
 const solutions = {
   Task0Solution,
   Task1Solution,
-  Task2Solution,
+  Task2: { Task2Solution, helper2 },
   Task3Solution,
+  Task4Solution,
+  Task5Solution,
+  Task6Solution,
+  Task7Solution,
 };
 export { solutions };
 
