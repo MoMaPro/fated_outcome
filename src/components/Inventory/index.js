@@ -2,7 +2,7 @@ import styled from "styled-components";
 // import getDiceShape from "../DiceFieldDice/DiceImages";
 import InventoryItem from "./InventoryItem";
 
-const Inventory = ({ handleAdd }) => {
+const Inventory = ({ handleAdd, diceChange }) => {
   return (
     <InventoryStyle>
       <div className="header">
@@ -11,6 +11,8 @@ const Inventory = ({ handleAdd }) => {
           We <span style={{ fontSize: "0.3rem" }}>can't</span> guarantee our
           dice are balanced :3 !
         </h4>
+
+        <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
       </div>
       <div className="table">
         <div className="row">
@@ -42,8 +44,15 @@ const InventoryStyle = styled.div`
   display: flex;
   flex-direction: column;
   border: solid black 3px;
+
   .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
   }
+
   .table {
     background-color: pink;
     display: flex;
@@ -54,6 +63,15 @@ const InventoryStyle = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+`;
+
+const ButtonStyle = styled.button`
+  position: absolute;
+  right: 15px;
+  border-radius: 30px;
+  border: solid purple 5px;
+  background-color: white;
+  color: purple;
 `;
 
 //DISPLAY DICE IN INVENTORY
