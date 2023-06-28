@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-const HomeWorkItem = ({ title, summary, Solution = null }) => {
+const TaskItem = ({ title, summary, children }) => {
   return (
     <HomeWork>
       <h2 className="problem">{title}</h2>
       <p>{summary}</p>
-      <div>{Solution !== null ? <Solution /> : <p> your solution...</p>}</div>
+      <div>{children ? children : <p> your solution...</p>}</div>
     </HomeWork>
   );
 };
 
-export default HomeWorkItem;
+export default TaskItem;
 
 const HomeWork = styled.article`
   div {
@@ -18,6 +18,6 @@ const HomeWork = styled.article`
   }
 
   @media (min-width: 800px) {
-    width: 600px;
+    width: 500px;
   }
 `;
