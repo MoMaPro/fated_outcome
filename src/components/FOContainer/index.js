@@ -1,11 +1,10 @@
 import React from "react";
-import { DiceState } from "./logic";
 import DiceField from "../DiceField";
 import styled from "styled-components";
 import Inventory from "../Inventory";
 
-const FOContainer = () => {
-  const { dice, handleRemoval, diceChange, handleAdd } = DiceState();
+const FOContainer = ({ diceState }) => {
+  const { dice, handleRemoval, diceChange, handleAdd } = diceState;
   return (
     <div>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
