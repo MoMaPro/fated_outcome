@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header
-      style={{ position: "fixed", border: "dotted 2px red", width: "100%" }}
+      style={{
+        position: "fixed",
+        border: "dotted 2px red",
+        width: "100%",
+        marginBottom: "3px",
+      }}
     >
       <Link style={{ margin: "5px" }} to="/">
         home
