@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { FOContainer, Homework } from "./components";
 import { DiceState } from "./components/FOContainer/logic";
 import Footer from "./components/Footer";
