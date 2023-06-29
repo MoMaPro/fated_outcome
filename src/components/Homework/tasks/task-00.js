@@ -30,8 +30,7 @@ const SolutionStyle = styled.div`
 //leave code below alone
 const solution = {
   title: "properties-example",
-  summary:
-    "Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties.",
+  summary: `task-00: Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties.`,
   item: <Render />,
 };
 export default solution;

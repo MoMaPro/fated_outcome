@@ -27,7 +27,7 @@ const SolutionStyle = styled.button``;
 const solution = {
   title: "modify_state",
   summary:
-    "The button displays what is in state. Finish setting up the UseState hook and set up the handler to modify state onClick",
+    "task-01: The button displays what is in state. Finish setting up the UseState hook and set up the handler to modify state onClick",
   item: <Render />,
 };
 export default solution;

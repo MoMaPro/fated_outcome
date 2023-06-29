@@ -5,7 +5,7 @@ import { useTaskItem } from "./tasks/TaskItem";
 
 const Homework = () => {
   const params = useParams();
-
+  const taskArray = Object.values(tasks).map((task) => task.title);
   const paramsTask = () => {
     const defaultTaskItem = {
       title: "No Task Found",
@@ -19,10 +19,7 @@ const Homework = () => {
     <Container>
       <header>
         <select>
-          <option>op1</option>
-          <option>op2</option>
-          <option>op3</option>
-          <option>op4</option>
+          {taskArray && taskArray.map((task) => <option>{task}</option>)}
         </select>
         <h1>HOMEWORK</h1>
         {Item}
