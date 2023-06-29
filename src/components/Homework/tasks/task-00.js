@@ -26,6 +26,11 @@ const SolutionStyle = styled.div`
     font-size: 0.7rem;
     color: red;
   }
+  @media (max-width: 800px) {
+    pre {
+      font-size: 0.55rem;
+    }
+  }
 `;
 
 //leave code below alone

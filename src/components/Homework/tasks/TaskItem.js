@@ -26,7 +26,7 @@ const HomeWork = styled.article`
     border: solid black 2px;
   }
 
-  @media (min-width: 800px) {
-    width: 500px;
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;

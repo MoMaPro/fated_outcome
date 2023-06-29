@@ -35,8 +35,8 @@ const Homework = () => {
             ))}
         </select>
         <h1>HOMEWORK</h1>
-        {Item}
       </header>
+      {Item}
     </Container>
   );
 };
@@ -49,94 +49,15 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
 
-  .hd-ul {
-    pre {
-      font-size: 0.7rem;
-      color: red;
-    }
+  select {
+    position: fixed;
+    top: 5px;
+    right: 5px;
   }
+
   @media (min-width: 800px) {
     header {
       width: 300px;
-      select {
-        position: fixed;
-        top: 5px;
-        right: 10px;
-      }
     }
   }
 `;
-
-/* <ul className="hd-ul">
-          <li className="hd-li">
-            Add your logic to the task in{" "}
-            <strong>components/Homework/solutions.js</strong>
-          </li>
-          <pre>
-            <code>{codeSnippet1}</code>
-          </pre>
-          <li className="hd-li">
-            Render your Element within the corresponding TaskItem Element in{" "}
-            <strong>components/Homework/index.js</strong>
-          </li>
-          <pre>
-            <code>{codeSnippet2}</code>
-          </pre>
-        </ul> */
-
-// <ul className="hw-ul">
-//   <li className="hw-ul">
-//     {/* TASK 0*/}
-//     <TaskItem title={tasks[0].title} summary={tasks[0].summary}>
-//       <Solutions.Task0Solution name="Marie" age={3} />{" "}
-//     </TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 1*/}
-//     <TaskItem title={tasks[1].title} summary={tasks[1].summary}>
-//       <Solutions.Task1Solution />
-//     </TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 2*/}
-//     <TaskItem
-//       title={tasks[2].title}
-//       summary={tasks[2].summary}
-//     ></TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 3*/}
-//     <TaskItem
-//       title={tasks[3].title}
-//       summary={tasks[3].summary}
-//     ></TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 4*/}
-//     <TaskItem
-//       title={tasks[4].title}
-//       summary={tasks[4].summary}
-//     ></TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 5*/}
-//     <TaskItem
-//       title={tasks[5].title}
-//       summary={tasks[5].summary}
-//     ></TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 6*/}
-//     <TaskItem
-//       title={tasks[6].title}
-//       summary={tasks[6].summary}
-//     ></TaskItem>
-//   </li>{" "}
-//   <li className="hw-ul">
-//     {/* TASK 67*/}
-//     <TaskItem
-//       title={tasks[7].title}
-//       summary={tasks[7].summary}
-//     ></TaskItem>
-//   </li>
-// </ul>
