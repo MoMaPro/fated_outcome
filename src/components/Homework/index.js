@@ -1,11 +1,18 @@
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import tasks from "./tasks";
 import { useTaskItem } from "./tasks/TaskItem";
 
 const Homework = () => {
-  const params = useParams();
   const taskArray = Object.values(tasks).map((task) => task.title);
+
+  const navigate = useNavigate();
+  const handleChange = (event) => {
+    const selectedPage = event.target.value;
+    navigate(selectedPage);
+  };
+
+  const params = useParams();
   const paramsTask = () => {
     const defaultTaskItem = {
       title: "No Task Found",
@@ -15,11 +22,17 @@ const Homework = () => {
     return tasks[params.title] ? tasks[params.title] : defaultTaskItem;
   };
   const { Item } = useTaskItem(paramsTask());
+
   return (
     <Container>
       <header>
-        <select>
-          {taskArray && taskArray.map((task) => <option>{task}</option>)}
+        <select onChange={handleChange}>
+          {taskArray &&
+            taskArray.map((task) => (
+              <option key={task} value={`/homework/${task}`}>
+                {task}
+              </option>
+            ))}
         </select>
         <h1>HOMEWORK</h1>
         {Item}
@@ -47,32 +60,14 @@ const Container = styled.div`
       width: 300px;
       select {
         position: fixed;
-        bottom: 15px;
+        top: 5px;
+        right: 10px;
       }
     }
   }
 `;
 
-const codeSnippet1 = `const Task0Solution = ({ name, age }) => {
-  //the style for this was created below the export
-  return (
-    <Task0Style>
-      my name is {name}. I have {age} cats.
-    </Task0Style>
-  );
-};`;
-
-const codeSnippet2 = `
-<li className="hw-ul">
-{/* TASK 0*/}
-<TaskItem title={tasks[0].title} summary={tasks[0].summary}>
-  <Solutions.Task0Solution name="Marie" age={3} />{" "}
-</TaskItem>
-</li>{" "}
-};`;
-
-{
-  /* <ul className="hd-ul">
+/* <ul className="hd-ul">
           <li className="hd-li">
             Add your logic to the task in{" "}
             <strong>components/Homework/solutions.js</strong>
@@ -88,7 +83,6 @@ const codeSnippet2 = `
             <code>{codeSnippet2}</code>
           </pre>
         </ul> */
-}
 
 // <ul className="hw-ul">
 //   <li className="hw-ul">
