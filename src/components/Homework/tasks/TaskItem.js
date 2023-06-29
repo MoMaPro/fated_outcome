@@ -10,8 +10,12 @@ const TaskItem = ({ title, summary, children }) => {
   );
 };
 
-export const useTaskItem = (data, render) => {
-  const render = TaskItem({ data });
+export const useTaskItem = (data) => {
+  const render = TaskItem({
+    title: data.title,
+    summary: data.summary,
+    children: data.item,
+  });
   return { title: data.title, summary: data.summary, Item: render };
 };
 

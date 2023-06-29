@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useTaskItem } from "./TaskItem";
 
+//PROPERTIES-EXAMPLE
 //Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties.
 //Style to your hearts content
 const Solution = () => {
@@ -15,11 +15,10 @@ const Render = () => {
 const SolutionStyle = styled.div``;
 
 //leave code below alone
-const data = {
+const solution = {
   title: "properties-example",
   summary:
     "Make a new Functional Element and declare a few properties within. Allow the Element to do something with the properties.",
+  item: <Render />,
 };
-
-const solution = useTaskItem(data, Render);
-export { solution };
+export default solution;
