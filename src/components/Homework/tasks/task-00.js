@@ -22,6 +22,9 @@ const Render = () => {
 };
 
 const SolutionStyle = styled.div`
+  ul {
+    text-align: left;
+  }
   pre {
     font-size: 0.7rem;
     color: red;
