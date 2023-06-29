@@ -72,5 +72,6 @@ const Container = styled.div`
     text-align center;
     border: black solid 2px;
     width: 300px;
+    margin:1rem;
   }
 `;
