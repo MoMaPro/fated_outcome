@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-//MODIFY-STATE
+//MODIFY STATE
 //The button displays what is in state. Finish setting up the UseState hook and set up the handler to modify state onClick
 //Style to your hearts content
 const Solution = () => {
@@ -10,9 +10,9 @@ const Solution = () => {
   const handleClick = () => {};
 
   return (
-    <button onClick={handleClick}>
+    <SolutionStyle onClick={handleClick}>
       <strong>{state}</strong>
-    </button>
+    </SolutionStyle>
   );
 };
 
@@ -21,11 +21,11 @@ const Render = () => {
   return <Solution />;
 };
 
-const SolutionStyle = styled.div``;
+const SolutionStyle = styled.button``;
 
 //leave code below alone
 const solution = {
-  title: "Modify-State",
+  title: "modify_state",
   summary:
     "The button displays what is in state. Finish setting up the UseState hook and set up the handler to modify state onClick",
   item: <Render />,
