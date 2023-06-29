@@ -10,6 +10,11 @@ const TaskItem = ({ title, summary, children }) => {
   );
 };
 
+export const useTaskItem = (data, render) => {
+  const render = TaskItem({ data });
+  return { title: data.title, summary: data.summary, Item: render };
+};
+
 export default TaskItem;
 
 const HomeWork = styled.article`
