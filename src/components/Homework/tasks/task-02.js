@@ -1,5 +1,5 @@
 //MORE WITH PROPERTIES
-//Task 2 solution is, instead of an Element, an object containing an Element and 'helper' function. Have the Element take in a function as a property and something else for that function to consume to then display in the element
+//task-02: Create a helper function and then Create a react solution that would have a function as a property as well as something else be it a string, number or object. Have your custom function consume the other property in some way within your soultion
 
 //Style to your hearts content
 const Solution = () => {

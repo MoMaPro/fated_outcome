@@ -14,7 +14,22 @@ function App() {
         <Route path="/home" element={<FOContainer diceState={diceState} />} />
         <Route path="/homework" element={<Homework />} />
         <Route path="/homework/:title" element={<Homework />} />
-        <Route path="*" element={<p>sorry, page not found</p>} />
+        <Route
+          path="*"
+          element={
+            <p
+              style={{
+                position: "fixed",
+                top: "15%",
+                left: "15%",
+                textAlign: "center",
+                color: "red",
+              }}
+            >
+              sorry, page not found
+            </p>
+          }
+        />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import tasks from "./tasks";
 import { useTaskItem } from "./tasks/TaskItem";
 
@@ -36,7 +36,14 @@ const Homework = () => {
         </select>
         <h1>HOMEWORK</h1>
       </header>
-      {Item}
+
+      {params.title
+        ? Item
+        : taskArray.map((task) => (
+            <Link className="taskLink" key={task} to={`/homework/${task}`}>
+              <div>{task}</div>
+            </Link>
+          ))}
     </Container>
   );
 };
@@ -45,9 +52,9 @@ export default Homework;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items:center;
+  text-align:center;
 
   select {
     position: fixed;
@@ -57,7 +64,13 @@ const Container = styled.div`
 
   @media (min-width: 800px) {
     header {
-      width: 300px;
+      width: 250px;
     }
+  }
+
+  .taskLink {
+    text-align center;
+    border: black solid 2px;
+    width: 300px;
   }
 `;

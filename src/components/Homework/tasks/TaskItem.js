@@ -24,6 +24,7 @@ export default TaskItem;
 const HomeWork = styled.article`
   div {
     border: solid black 2px;
+    width: 100%;
   }
 
   @media (max-width: 800px) {
