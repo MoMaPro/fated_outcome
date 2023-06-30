@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import tasks from "./tasks";
 import { useTaskItem } from "./tasks/TaskItem";
 import Dropdown from "./Dropdown";
+import theme from "../../styles/theme";
 
 const Homework = () => {
   const taskArray = Object.values(tasks).map((task) => task.title);
-
-  const navigate = useNavigate();
 
   const params = useParams();
   const paramsTask = () => {
@@ -25,7 +24,7 @@ const Homework = () => {
       <header>
         <Dropdown display="Tasks">
           {taskArray.map((task) => (
-            <Link key={task} to={`/homework/${task}`}>
+            <Link className="task-link" key={task} to={`/homework/${task}`}>
               <div>{task}</div>
             </Link>
           ))}
@@ -36,7 +35,7 @@ const Homework = () => {
       {params.title
         ? Item
         : taskArray.map((task) => (
-            <Link className="taskLink" key={task} to={`/homework/${task}`}>
+            <Link className="task-link" key={task} to={`/homework/${task}`}>
               <div>{task}</div>
             </Link>
           ))}
@@ -53,14 +52,33 @@ const Container = styled.div`
   text-align: center;
   padding: 5rem;
 
+  background-color: ${() => theme.primary};
+  color: ${() => theme.secondary};
+  border-color: ${() => theme.tertiary};
+
+  .task-link {
+    margin: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
   .dropdown {
     position: fixed;
-    top: 5px;
+    top: 2px;
     right: 5px;
   }
 
+  .dropdown-icon {
+    border: solid 2px ${() => theme.secondary};
+    background-color: ${() => theme.primary};
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+
   .dropdown-content {
-    right: 15px;
+    right: 5px;
+    background-color: ${() => theme.tertiary};
+    border-radius: 15px;
   }
 
   @media (min-width: 800px) {

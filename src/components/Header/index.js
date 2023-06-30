@@ -1,20 +1,27 @@
 import { Link } from "react-router-dom";
+import theme from "../../styles/theme";
 
 const Header = () => {
+  const linkStyle = {
+    margin: "5px",
+    textDecoration: "none",
+    color: theme.secondary,
+  };
   return (
     <header
       style={{
         position: "fixed",
-        border: "dotted 2px red",
+        border: `solid 2px ${theme.secondary}`,
+        backgroundColor: theme.primary,
         width: "100%",
         marginBottom: "3px",
       }}
     >
-      <Link style={{ margin: "5px" }} to="/">
+      <Link style={linkStyle} to="/">
         home
       </Link>
 
-      <Link style={{ margin: "5px" }} to="/homework">
+      <Link style={linkStyle} to="/homework">
         homework
       </Link>
     </header>

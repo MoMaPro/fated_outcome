@@ -23,7 +23,9 @@ export default TaskItem;
 
 const HomeWork = styled.article`
   div {
-    border: solid black 2px;
+    border: solid 2px;
+    background: white;
+    color: black;
     width: 100%;
   }
 
