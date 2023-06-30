@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import tasks from "./tasks";
 import { useTaskItem } from "./tasks/TaskItem";
+import Dropdown from "./Dropdown";
 
 const Homework = () => {
   const taskArray = Object.values(tasks).map((task) => task.title);
@@ -26,14 +27,13 @@ const Homework = () => {
   return (
     <Container>
       <header>
-        <select onChange={handleChange}>
-          {taskArray &&
-            taskArray.map((task) => (
-              <option key={task} value={`/homework/${task}`}>
-                {task}
-              </option>
-            ))}
-        </select>
+        <Dropdown display="Tasks">
+          {taskArray.map((task) => (
+            <Link key={task} to={`/homework/${task}`}>
+              <div>{task}</div>
+            </Link>
+          ))}
+        </Dropdown>
         <h1>HOMEWORK</h1>
       </header>
 
@@ -53,25 +53,23 @@ export default Homework;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items:center;
-  text-align:center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem;
 
-  select {
+  .dropdown {
     position: fixed;
     top: 5px;
     right: 5px;
+  }
+
+  .dropdown-content {
+    right: 15px;
   }
 
   @media (min-width: 800px) {
     header {
       width: 250px;
     }
-  }
-
-  .taskLink {
-    text-align center;
-    border: black solid 2px;
-    width: 300px;
-    margin:1rem;
   }
 `;
