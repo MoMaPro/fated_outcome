@@ -8,10 +8,6 @@ const Homework = () => {
   const taskArray = Object.values(tasks).map((task) => task.title);
 
   const navigate = useNavigate();
-  const handleChange = (event) => {
-    const selectedPage = event.target.value;
-    navigate(selectedPage);
-  };
 
   const params = useParams();
   const paramsTask = () => {
