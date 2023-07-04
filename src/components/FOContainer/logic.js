@@ -22,15 +22,10 @@ const DiceState = () => {
   };
 
   const handleAdd = (dType) => {
-    setDice((prevDice) =>
-      dType !== "d100"
-        ? [...prevDice, { dType: dType, value: randomizor(dType) }]
-        : [
-            ...prevDice,
-            { dType: dType, value: randomizor(dType) },
-            { dType: "d10", value: randomizor("d10") },
-          ]
-    );
+    setDice((prevDice) => [
+      ...prevDice,
+      { dType: dType, value: randomizor(dType) },
+    ]);
   };
 
   const clearDiceState = () => {
@@ -62,14 +57,14 @@ function randomizor(dType) {
       d = 20;
       break;
     case "d100":
-      d = 10;
+      d = 100;
       break;
     default:
       d = 6;
       break;
   }
   let result = Math.ceil(Math.random() * d);
-  return dType === "d100" ? (result === 10 ? "00" : result * 10) : result;
+  return result;
 }
 
 export { randomizor, DiceState };
