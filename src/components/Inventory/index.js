@@ -2,7 +2,7 @@ import styled from "styled-components";
 // import getDiceShape from "../DiceFieldDice/DiceImages";
 import InventoryItem from "./InventoryItem";
 
-const Inventory = ({ handleAdd, diceChange }) => {
+const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   return (
     <InventoryStyle>
       <div className="header">
@@ -13,6 +13,7 @@ const Inventory = ({ handleAdd, diceChange }) => {
         </h4>
 
         <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
+        <ButtonStyle onClick={clearDiceField}>Clear Field</ButtonStyle>
       </div>
       <div className="table">
         <div className="row">

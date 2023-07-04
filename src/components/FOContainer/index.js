@@ -8,7 +8,11 @@ const FOContainer = ({ diceState }) => {
     diceState;
   return (
     <Container>
-      <Inventory handleAdd={handleAdd} diceChange={diceChange}></Inventory>
+      <Inventory
+        handleAdd={handleAdd}
+        diceChange={diceChange}
+        clearDiceField={clearDiceState}
+      ></Inventory>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
     </Container>
   );
