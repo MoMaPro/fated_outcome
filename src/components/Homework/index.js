@@ -78,6 +78,7 @@ const Container = styled.div`
   .dropdown-content {
     right: 5px;
     background-color: ${() => theme.tertiary};
+    color: ${theme.primary};
     border-radius: 15px;
   }
 
