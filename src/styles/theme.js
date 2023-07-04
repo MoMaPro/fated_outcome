@@ -1,7 +1,7 @@
 const theme = {
-  primary: "#071c05",
+  primary: "#662d91",
   secondary: "pink",
-  tertiary: "#470546",
+  tertiary: "#F0E68C",
 };
 
 export default theme;

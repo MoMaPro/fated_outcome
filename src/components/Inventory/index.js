@@ -1,6 +1,6 @@
 import styled from "styled-components";
-// import getDiceShape from "../DiceFieldDice/DiceImages";
 import InventoryItem from "./InventoryItem";
+import theme from "../../styles/theme";
 
 const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   return (
@@ -48,7 +48,8 @@ export default Inventory;
 const InventoryStyle = styled.div`
   display: flex;
   flex-direction: column;
-  border: solid black 3px;
+  border: solid ${theme.secondary} 3px;
+  color: ${theme.secondary};
 
   .header {
     display: flex;
@@ -59,7 +60,7 @@ const InventoryStyle = styled.div`
   }
 
   .table {
-    background-color: pink;
+    border-top: solid ${theme.secondary} 3px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -70,9 +71,9 @@ const InventoryStyle = styled.div`
   }
   .menu-button {
     border-radius: 30px;
-    border: solid purple 5px;
-    background-color: white;
-    color: purple;
+    border: solid ${theme.secondary} 5px;
+    background-color: ${theme.secondary};
+    color: ${theme.primary};
   }
 `;
 
