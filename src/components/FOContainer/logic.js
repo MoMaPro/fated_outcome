@@ -65,7 +65,7 @@ function randomizor(dType) {
       break;
   }
   let result = Math.ceil(Math.random() * d);
-  return dType == "d100" ? (result == 10 ? "00" : result * 10) : result;
+  return dType === "d100" ? (result === 10 ? "00" : result * 10) : result;
 }
 
 export { randomizor, DiceState };
