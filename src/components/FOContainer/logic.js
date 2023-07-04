@@ -33,7 +33,11 @@ const DiceState = () => {
     );
   };
 
-  return { dice, handleRemoval, diceChange, handleAdd };
+  const clearDiceState = () => {
+    setDice([]);
+  };
+
+  return { dice, handleRemoval, diceChange, handleAdd, clearDiceState };
 };
 
 function randomizor(dType) {

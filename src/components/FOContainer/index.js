@@ -4,7 +4,8 @@ import styled from "styled-components";
 import Inventory from "../Inventory";
 
 const FOContainer = ({ diceState }) => {
-  const { dice, handleRemoval, diceChange, handleAdd } = diceState;
+  const { dice, handleRemoval, diceChange, handleAdd, clearDiceState } =
+    diceState;
   return (
     <Container>
       <Inventory handleAdd={handleAdd} diceChange={diceChange}></Inventory>
