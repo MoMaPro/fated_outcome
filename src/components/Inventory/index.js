@@ -12,8 +12,12 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
           dice are balanced :3 !
         </h4>
 
-        <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
-        <ButtonStyle onClick={clearDiceField}>Clear Field</ButtonStyle>
+        <RollStyle className="menu-button" onClick={diceChange}>
+          Roll Dice
+        </RollStyle>
+        <ClearStyle className="menu-button" onClick={clearDiceField}>
+          Clear Field
+        </ClearStyle>
       </div>
       <div className="table">
         <div className="row">
@@ -64,15 +68,21 @@ const InventoryStyle = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  .menu-button {
+    border-radius: 30px;
+    border: solid purple 5px;
+    background-color: white;
+    color: purple;
+  }
 `;
 
-const ButtonStyle = styled.button`
+const RollStyle = styled.button`
+  position: absolute;
+  left: 15px;
+`;
+const ClearStyle = styled.button`
   position: absolute;
   right: 15px;
-  border-radius: 30px;
-  border: solid purple 5px;
-  background-color: white;
-  color: purple;
 `;
 
 //DISPLAY DICE IN INVENTORY
