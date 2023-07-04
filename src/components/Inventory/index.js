@@ -1,8 +1,8 @@
 import styled from "styled-components";
-// import getDiceShape from "../DiceFieldDice/DiceImages";
 import InventoryItem from "./InventoryItem";
+import theme from "../../styles/theme";
 
-const Inventory = ({ handleAdd, diceChange }) => {
+const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   return (
     <InventoryStyle>
       <div className="header">
@@ -12,7 +12,12 @@ const Inventory = ({ handleAdd, diceChange }) => {
           dice are balanced :3 !
         </h4>
 
-        <ButtonStyle onClick={diceChange}>Roll Dice</ButtonStyle>
+        <RollStyle className="menu-button" onClick={diceChange}>
+          Roll Dice
+        </RollStyle>
+        <ClearStyle className="menu-button" onClick={clearDiceField}>
+          Clear Field
+        </ClearStyle>
       </div>
       <div className="table">
         <div className="row">
@@ -43,7 +48,8 @@ export default Inventory;
 const InventoryStyle = styled.div`
   display: flex;
   flex-direction: column;
-  border: solid black 3px;
+  border: solid ${theme.secondary} 3px;
+  color: ${theme.secondary};
 
   .header {
     display: flex;
@@ -54,7 +60,7 @@ const InventoryStyle = styled.div`
   }
 
   .table {
-    background-color: pink;
+    border-top: solid ${theme.secondary} 3px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -63,15 +69,21 @@ const InventoryStyle = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  .menu-button {
+    border-radius: 30px;
+    border: solid ${theme.secondary} 5px;
+    background-color: ${theme.secondary};
+    color: ${theme.primary};
+  }
 `;
 
-const ButtonStyle = styled.button`
+const RollStyle = styled.button`
+  position: absolute;
+  left: 15px;
+`;
+const ClearStyle = styled.button`
   position: absolute;
   right: 15px;
-  border-radius: 30px;
-  border: solid purple 5px;
-  background-color: white;
-  color: purple;
 `;
 
 //DISPLAY DICE IN INVENTORY
