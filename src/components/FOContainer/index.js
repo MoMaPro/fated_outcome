@@ -3,12 +3,18 @@ import DiceField from "../DiceField";
 import styled from "styled-components";
 import Inventory from "../Inventory";
 import theme from "../../styles/theme";
+import { Helmet } from "react-helmet";
 
 const FOContainer = ({ diceState }) => {
   const { dice, handleRemoval, diceChange, handleAdd, clearDiceState } =
     diceState;
   return (
     <Container>
+      {" "}
+      <Helmet>
+        <title>Fated Outcome</title>
+        <meta name="description" content="Super Fair Dice Roller" />
+      </Helmet>
       <Inventory
         handleAdd={handleAdd}
         diceChange={diceChange}
