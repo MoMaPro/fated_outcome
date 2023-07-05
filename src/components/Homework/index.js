@@ -4,6 +4,7 @@ import tasks from "./tasks";
 import { useTaskItem } from "./tasks/TaskItem";
 import Dropdown from "./Dropdown";
 import theme from "../../styles/theme";
+import { Helmet } from "react-helmet";
 
 const Homework = () => {
   const taskArray = Object.values(tasks).map((task) => task.title);
@@ -21,6 +22,13 @@ const Homework = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Fated Homework</title>
+        <meta
+          name="description"
+          content="React and Javascript Tasks to keep fresh!"
+        />
+      </Helmet>
       <header>
         <Dropdown display="Tasks">
           {taskArray.map((task) => (
