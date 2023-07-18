@@ -6,6 +6,9 @@ import { useState } from "react";
 
 const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   const [modalActive, setModalActive] = useState(false);
+  const modalHandler = () => {
+    setModalActive(!modalActive);
+  };
   return (
     <InventoryStyle>
       <div className="header">
@@ -71,7 +74,7 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
             dType="d100"
             productImage={images.D100button}
           />
-          <button>Modifier modal</button>
+          <button onClick={modalHandler}>Modifier modal</button>
         </div>
       </div>
     </InventoryStyle>
