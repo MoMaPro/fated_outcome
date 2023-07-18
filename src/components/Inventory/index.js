@@ -20,6 +20,9 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
           Clear Field
         </ClearStyle>
       </div>
+      <ModalStyle className="modifier-modal">
+        <p>This is where the modal will pop up</p>
+      </ModalStyle>
       <div className="table">
         <div className="row">
           <InventoryItem
@@ -64,6 +67,7 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
             dType="d100"
             productImage={images.D100button}
           />
+          <button>Modifier modal</button>
         </div>
       </div>
     </InventoryStyle>
@@ -104,6 +108,16 @@ const InventoryStyle = styled.div`
     background-color: ${theme.secondary};
     color: ${theme.primary};
   }
+`;
+const ModalStyle = styled.div`
+  position: absolute;
+  top: 150px;
+  background-color: ${theme.tertiary};
+  color: ${theme.primary};
+  width: 50%;
+  border-radius: 30px;
+  align-self: center;
+  text-align: center;
 `;
 
 const RollStyle = styled.button`
