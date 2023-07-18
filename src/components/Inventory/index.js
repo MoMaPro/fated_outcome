@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import InventoryItem from "./InventoryItem";
 import theme from "../../styles/theme";
+import * as images from "./wares";
 
 const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   return (
@@ -21,20 +22,48 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
       </div>
       <div className="table">
         <div className="row">
-          <InventoryItem handleAdd={handleAdd} dType="d4" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d4"
+            productImage={images.D4button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d6" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d6"
+            productImage={images.D6button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d8" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d8"
+            productImage={images.D8button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d10" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d10"
+            productImage={images.D10button}
+          />
         </div>
         <div className="row">
-          <InventoryItem handleAdd={handleAdd} dType="d12" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d12"
+            productImage={images.D12button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d20" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d20"
+            productImage={images.D20button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d100" />
+          <InventoryItem
+            handleAdd={handleAdd}
+            dType="d100"
+            productImage={images.D100button}
+          />
         </div>
       </div>
     </InventoryStyle>
