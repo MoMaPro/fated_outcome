@@ -1,8 +1,8 @@
-const InventoryItem = ({ handleAdd, dType }) => {
+const InventoryItem = ({ handleAdd, dType, productImage }) => {
   const handler = () => handleAdd(dType);
   return (
     <button style={{ width: "100%" }} onClick={handler}>
-      {dType}
+      <img src={productImage} alt={dType} />
     </button>
   );
 };
