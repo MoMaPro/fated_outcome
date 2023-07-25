@@ -103,11 +103,13 @@ const InventoryStyle = styled.div`
     border-top: solid ${theme.secondary} 3px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
   }
   .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding: 0px;
+    margin: 0;
   }
   .menu-button {
     border-radius: 30px;
