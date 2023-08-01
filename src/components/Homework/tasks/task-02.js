@@ -2,92 +2,79 @@ import React, { useState } from "react";
 import theme from "../../../styles/theme";
 import styled from "styled-components";
 
-//MORE WITH PROPERTIES
-//task-02: Create a helper function and then Create a react solution that
-//would have a function as a property as well as something else be it a string,
-// number or object. Have your custom function consume the other property
-//in some way within your soultion
+// //MORE WITH PROPERTIES
+// //task-02: Create a helper function and then Create a react solution that
+// //would have a function as a property as well as something else be it a string,
+// // number or object. Have your custom function consume the other property
+// //in some way within your soultion
 
-//Goals:I want to create a spellbook that contains spells.
-//Each spell has to have a lvl, name, range and description.
-//Onclick the button adds the spells entered into the text fields below the form.
+// //Style to your hearts content
+function shuffleArray(array) {
+  let currentIndex = array.length;
+  let temporaryValue, randomIndex;
 
-//Style to your hearts content
-//State Management
-const Spellbook = ({ spellbookName }) => {
-  const [spells, setSpells] = useState([]);
+  while (0 !== currentIndex) {
+    //Pick a remaining element
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-  const handleAddSpell = (event) => {
-    event.preventDefault();
-    const { level, name, range, description } = event.target.elements;
+    //Swap with current element
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
-    //Object with form input values
-    const newSpell = {
-      level: level.value,
-      name: name.value,
-      range: range.value,
-      description: description.value,
-    };
-    //Adds new spells to the spell list
-    setSpells((prevSpells) => [...prevSpells, newSpell]);
+const Solution = ({ myFunction, data }) => {
+  //Shuffling the spellbook Array
+  const [shuffledArray, setshuffledArray] = useState(
+    myFunction([...data.SpellbookArray])
+  );
 
-    event.target.reset();
+  //Event handler for button ----->WIP
+  const handleShuffle = () => {
+    console.log(shuffledArray);
+    setshuffledArray(myFunction([...data.SpellbookArray]));
   };
+
+  console.log(shuffledArray);
 
   return (
     <SpellStyle>
       <div>
-        <img src={require("./images/skull.png")} alt="skull" width={"45%"} />
-        <h2>{spellbookName}</h2>
+        <h2>Assorted Spellbooks</h2>
+        <h4>{data.stringProp}</h4>
+        <ul>
+          {shuffledArray.map((spellbook) => {
+            // console.log(spellbook);
 
-        <p>
-          <strong>
-            Essential for wizards, a spellbook is a leather-bound tome with 100
-            blank vellum pages suitable for recording spells.
-          </strong>
-        </p>
-      </div>
-      <div>
-        <form onSubmit={handleAddSpell}>
-          <label>
-            Level:
-            <input type="text" name="level" required />
-          </label>
-          <label>
-            Name:
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Range:
-            <input type="text" name="range" required />
-          </label>
-          <label>
-            Description:
-            <input type="text" name="description" required />
-          </label>
-          <button type="submit">Add Spell</button>
-        </form>
-        <div>
-          {spells.map((info, index) => (
-            <div key={index}>
-              <h3>
-                Level{info.level}: {info.name}
-              </h3>
-              <p>Range: {info.range}</p>
-              <p>Description:{info.description}</p>
-            </div>
-          ))}
-        </div>
+            return <li>{spellbook}</li>;
+          })}
+        </ul>
+        <button className="button" onClick={handleShuffle}>
+          Shuffle
+        </button>
       </div>
     </SpellStyle>
   );
 };
-
 //And Render Them
 const Render = () => {
-  return (
-    <Spellbook spellbookName="Grimoire of Eternal Skull Crushing: Volume II " />
-  );
+  const data = {
+    stringProp: "Here's a list of the spellbooks we have for sale!",
+    SpellbookArray: [
+      "Grimoire of Eternal Flame",
+      "Tome of the Enchanted Forest",
+      "Codex of the Undead",
+      "Book of Elemental Mastery",
+      "Scrolls of Arcane Secrets",
+      "Compendium of Ancient Spells",
+      "Chronicles of the Moonlight Coven",
+      "Liber Novus of Celestial Wonders",
+    ],
+  };
+  return <Solution data={data} myFunction={shuffleArray} />;
 };
 
 //Styling
@@ -119,4 +106,5 @@ const solution = {
     "task-02: Create a helper function and then Create a react solution that would have a function as a property as well as something else be it a string, number or object. Have your custom function consume the other property in some way within your soultion",
   item: <Render />,
 };
-export default solution;
+
+export default solution; //MORE WITH PROPERTIES
