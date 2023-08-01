@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import theme from "../../../styles/theme";
 import styled from "styled-components";
+import * as images from "./images";
 
 // //MORE WITH PROPERTIES
 // //task-02: Create a helper function and then Create a react solution that
@@ -67,10 +68,7 @@ const Render = () => {
       "Grimoire of Eternal Flame",
       "Tome of the Enchanted Forest",
       "Codex of the Undead",
-      "Book of Elemental Mastery",
-      "Scrolls of Arcane Secrets",
-      "Compendium of Ancient Spells",
-      "Chronicles of the Moonlight Coven",
+      "Compendium of Water",
       "Liber Novus of Celestial Wonders",
     ],
   };
