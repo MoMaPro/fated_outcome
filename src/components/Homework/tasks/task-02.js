@@ -50,7 +50,7 @@ const Solution = ({ myFunction, data }) => {
           {shuffledArray.map((spellbook) => {
             // console.log(spellbook);
 
-            return <li>{spellbook}</li>;
+            return <li>{spellbook.title}</li>;
           })}
         </ul>
         <button className="button" onClick={handleShuffle}>
@@ -65,11 +65,11 @@ const Render = () => {
   const data = {
     stringProp: "Here's a list of the spellbooks we have for sale!",
     SpellbookArray: [
-      "Grimoire of Eternal Flame",
-      "Tome of the Enchanted Forest",
-      "Codex of the Undead",
-      "Compendium of Water",
-      "Liber Novus of Celestial Wonders",
+      { title: "Grimoire of Eternal Flame", image: images.fire },
+      { title: "Tome of the Enchanted Forest", image: "" },
+      { title: "Codex of the Undead", image: "" },
+      { title: "Compendium of Water", image: "" },
+      { title: "Liber Novus of Celestial Wonders", image: "" },
     ],
   };
   return <Solution data={data} myFunction={shuffleArray} />;
