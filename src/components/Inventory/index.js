@@ -33,44 +33,44 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
       <div className="table">
         <div className="row">
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d4"
             productImage={images.D4button}
           />
 
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d6"
             productImage={images.D6button}
           />
 
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d8"
             productImage={images.D8button}
           />
 
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d10"
             productImage={images.D10button}
           />
         </div>
         <div className="row">
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d12"
             productImage={images.D12button}
           />
 
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d20"
             productImage={images.D20button}
           />
 
           <InventoryItem
-            handleAdd={handleAdd}
+            iFunction={handleAdd}
             dType="d100"
             productImage={images.D100button}
           />
