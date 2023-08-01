@@ -13,7 +13,7 @@ import * as images from "./images";
 function shuffleArray(array) {
   let currentIndex = array.length;
   let temporaryValue, randomIndex;
-
+  console.log(images);
   while (0 !== currentIndex) {
     //Pick a remaining element
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -50,7 +50,14 @@ const Solution = ({ myFunction, data }) => {
           {shuffledArray.map((spellbook) => {
             // console.log(spellbook);
 
-            return <li>{spellbook.title}</li>;
+            return (
+              <li>
+                <p>{spellbook.title}</p>
+                {spellbook.image && (
+                  <img src={spellbook.image} alt="spellbook" width="100px" />
+                )}
+              </li>
+            );
           })}
         </ul>
         <button className="button" onClick={handleShuffle}>
