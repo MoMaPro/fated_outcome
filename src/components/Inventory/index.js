@@ -74,7 +74,11 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
             dType="d100"
             productImage={images.D100button}
           />
-          <button onClick={modalHandler}>Modifier modal</button>
+          <InventoryItem
+            iFunction={modalHandler}
+            dType="mod"
+            productImage={images.D100button}
+          />
         </div>
       </div>
     </InventoryStyle>

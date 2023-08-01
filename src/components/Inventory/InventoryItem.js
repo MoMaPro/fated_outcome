@@ -1,6 +1,6 @@
 import { displayTray } from "./wares";
 const InventoryItem = ({ iFunction, dType, productImage }) => {
-  const handler = () => iFunction(dType);
+  const handler = () => (dType === "mod" ? iFunction() : iFunction(dType));
   return (
     <div
       style={{
