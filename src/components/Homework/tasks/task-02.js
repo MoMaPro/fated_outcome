@@ -73,10 +73,13 @@ const Render = () => {
     stringProp: "Here's a list of the spellbooks we have for sale!",
     SpellbookArray: [
       { title: "Grimoire of Eternal Flame", image: images.fire },
-      { title: "Tome of the Enchanted Forest", image: "" },
-      { title: "Codex of the Undead", image: "" },
-      { title: "Compendium of Water", image: "" },
-      { title: "Liber Novus of Celestial Wonders", image: "" },
+      { title: "Tome of the Enchanted Forest", image: images.plant },
+      { title: "Codex of the Undead", image: images.skull },
+      { title: "Compendium of Water", image: images.water },
+      {
+        title: "Liber Novus of Celestial Wonders",
+        image: images.biblicalAngel,
+      },
     ],
   };
   return <Solution data={data} myFunction={shuffleArray} />;
