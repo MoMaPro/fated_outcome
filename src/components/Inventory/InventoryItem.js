@@ -1,9 +1,21 @@
-const InventoryItem = ({ handleAdd, dType }) => {
-  const handler = () => handleAdd(dType);
+import { displayTray } from "./wares";
+const InventoryItem = ({ iFunction, dType, productImage }) => {
+  const handler = () => (dType === "mod" ? iFunction() : iFunction(dType));
   return (
-    <button style={{ width: "100%" }} onClick={handler}>
-      {dType}
-    </button>
+    <div
+      style={{
+        width: "126px",
+        height: "100%",
+        background: `url(${displayTray})`,
+        backgroundSize: "90%",
+        backgroundRepeat: "no-repeat",
+        margin: 0,
+        padding: 0,
+      }}
+      onClick={handler}
+    >
+      <img src={productImage} alt={dType} width={"100%"} />
+    </div>
   );
 };
 

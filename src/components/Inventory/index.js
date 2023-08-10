@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import InventoryItem from "./InventoryItem";
 import theme from "../../styles/theme";
+import * as images from "./wares";
+import { useState } from "react";
 
 const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
+  const [modalActive, setModalActive] = useState(false);
+  const modalHandler = () => {
+    setModalActive(!modalActive);
+  };
   return (
     <InventoryStyle>
       <div className="header">
@@ -19,22 +25,60 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
           Clear Field
         </ClearStyle>
       </div>
+      {modalActive && (
+        <ModalStyle className="modifier-modal">
+          <p>This is where the modal will pop up</p>
+        </ModalStyle>
+      )}
       <div className="table">
         <div className="row">
-          <InventoryItem handleAdd={handleAdd} dType="d4" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d4"
+            productImage={images.D4button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d6" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d6"
+            productImage={images.D6button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d8" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d8"
+            productImage={images.D8button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d10" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d10"
+            productImage={images.D10button}
+          />
         </div>
         <div className="row">
-          <InventoryItem handleAdd={handleAdd} dType="d12" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d12"
+            productImage={images.D12button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d20" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d20"
+            productImage={images.D20button}
+          />
 
-          <InventoryItem handleAdd={handleAdd} dType="d100" />
+          <InventoryItem
+            iFunction={handleAdd}
+            dType="d100"
+            productImage={images.D100button}
+          />
+          <InventoryItem
+            iFunction={modalHandler}
+            dType="mod"
+            productImage={images.modEelBlack}
+          />
         </div>
       </div>
     </InventoryStyle>
@@ -63,11 +107,13 @@ const InventoryStyle = styled.div`
     border-top: solid ${theme.secondary} 3px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
   }
   .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding: 0px;
+    margin: 0;
   }
   .menu-button {
     border-radius: 30px;
@@ -75,6 +121,16 @@ const InventoryStyle = styled.div`
     background-color: ${theme.secondary};
     color: ${theme.primary};
   }
+`;
+const ModalStyle = styled.div`
+  position: absolute;
+  top: 150px;
+  background-color: ${theme.tertiary};
+  color: ${theme.primary};
+  width: 50%;
+  border-radius: 30px;
+  align-self: center;
+  text-align: center;
 `;
 
 const RollStyle = styled.button`
