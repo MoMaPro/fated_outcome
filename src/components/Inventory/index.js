@@ -6,9 +6,11 @@ import { useState } from "react";
 
 const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
   const [modalActive, setModalActive] = useState(false);
+
   const modalHandler = () => {
     setModalActive(!modalActive);
   };
+
   return (
     <InventoryStyle>
       <div className="header">
