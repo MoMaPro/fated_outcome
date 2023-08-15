@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const DiceState = () => {
+  const [modifiers, setModifiers] = useState(0);
   const [dice, setDice] = useState([]);
 
   useEffect(() => {
