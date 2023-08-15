@@ -1,14 +1,24 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
+import { useState } from "react";
 
 const ModifierModal = ({ handleModal, handleModifier, modifier }) => {
+  const [displayInput, setDisplayInput] = useState(modifier);
+  const handleInput = (e) => {
+    setDisplayInput(e.target.value);
+  };
+
   return (
     <ModalStyle className="modifier-modal">
       <div className="off-click" onClick={handleModal}></div>
       <div className="modal-body">
         <p>Add your modifier to your total</p>
         <p>{modifier}</p>
-        <input type="number"></input>
+        <input
+          type="number"
+          onChange={handleInput}
+          value={displayInput}
+        ></input>
         <button>Apply</button>
       </div>
     </ModalStyle>
