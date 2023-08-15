@@ -5,7 +5,13 @@ import theme from "../../styles/theme";
 import * as images from "./wares";
 import { useState } from "react";
 
-const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
+const Inventory = ({
+  handleAdd,
+  diceChange,
+  clearDiceField,
+  handleModifier,
+  modfier,
+}) => {
   const [modalActive, setModalActive] = useState(false);
 
   const modalHandler = () => {
@@ -28,7 +34,13 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
           Clear Field
         </ClearStyle>
       </div>
-      {modalActive && <ModifierModal handleModal={modalHandler} />}
+      {modalActive && (
+        <ModifierModal
+          handleModal={modalHandler}
+          handleModifier={handleModifier}
+          modifier={modfier}
+        />
+      )}
       <div className="table">
         <div className="row">
           <InventoryItem
