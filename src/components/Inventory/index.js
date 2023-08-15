@@ -10,7 +10,7 @@ const Inventory = ({
   diceChange,
   clearDiceField,
   handleModifier,
-  modfier,
+  modifier,
 }) => {
   const [modalActive, setModalActive] = useState(false);
 
@@ -38,7 +38,7 @@ const Inventory = ({
         <ModifierModal
           handleModal={modalHandler}
           handleModifier={handleModifier}
-          modifier={modfier}
+          modifier={modifier}
         />
       )}
       <div className="table">

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
 
-const ModifierModal = ({ handleModal, handlerModifier, modifier }) => {
+const ModifierModal = ({ handleModal, handleModifier, modifier }) => {
   return (
     <ModalStyle className="modifier-modal">
       <div className="off-click" onClick={handleModal}></div>
       <div className="modal-body">
         <p>Add your modifier to your total</p>
+        <p>{modifier}</p>
         <input type="number"></input>
         <button>Apply</button>
       </div>
