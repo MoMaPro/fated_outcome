@@ -13,13 +13,12 @@ const ModifierModal = ({ handleModal, handleModifier, modifier }) => {
       <div className="off-click" onClick={handleModal}></div>
       <div className="modal-body">
         <p>Add your modifier to your total</p>
-        <p>{modifier}</p>
         <input
           type="number"
           onChange={handleInput}
           value={displayInput}
         ></input>
-        <button>Apply</button>
+        <button onClick={() => handleModifier(displayInput)}>Apply</button>
       </div>
     </ModalStyle>
   );

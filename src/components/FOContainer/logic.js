@@ -11,7 +11,9 @@ const DiceState = () => {
 
   useEffect(() => {
     if (dice.length > 0)
-      console.log(dice.reduce((acc, die) => acc + die.value, 0) + modifier);
+      console.log(
+        dice.reduce((acc, die) => acc + die.value, 0) + Number(modifier)
+      );
   }, [dice, modifier]);
 
   const handleRemoval = (dIndex) => {
