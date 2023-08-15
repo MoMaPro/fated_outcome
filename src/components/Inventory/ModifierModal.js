@@ -29,8 +29,8 @@ const ModalStyle = styled.div`
 
   .modal-body {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 20%;
+    left: 25%;
     background-color: ${theme.tertiary};
     color: ${theme.primary};
     width: 50%;
