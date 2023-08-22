@@ -85,11 +85,14 @@ const Inventory = ({
             dType="d100"
             productImage={images.D100button}
           />
-          <InventoryItem
-            iFunction={modalHandler}
-            dType="mod"
-            productImage={images.modEelBlack}
-          />
+          <div style={{ position: "relative" }}>
+            <ModifierStyle>{modifier}</ModifierStyle>
+            <InventoryItem
+              iFunction={modalHandler}
+              dType="mod"
+              productImage={images.modEelBlack}
+            ></InventoryItem>
+          </div>
         </div>
       </div>
     </InventoryStyle>
@@ -133,15 +136,14 @@ const InventoryStyle = styled.div`
     color: ${theme.primary};
   }
 `;
-const ModalStyle = styled.div`
+const ModifierStyle = styled.div`
   position: absolute;
-  top: 150px;
-  background-color: ${theme.tertiary};
-  color: ${theme.primary};
-  width: 50%;
+  z-index: 9;
+  top: 5px;
+  left: 5px;
   border-radius: 30px;
-  align-self: center;
-  text-align: center;
+  background-color: ${theme.secondary};
+  color: ${theme.primary};
 `;
 
 const RollStyle = styled.button`
