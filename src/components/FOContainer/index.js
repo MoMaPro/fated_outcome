@@ -3,6 +3,7 @@ import DiceField from "../DiceField";
 import styled from "styled-components";
 import Inventory from "../Inventory";
 import theme from "../../styles/theme";
+import Merchant from "../Merchant";
 
 const FOContainer = ({ diceState }) => {
   const {
@@ -16,6 +17,7 @@ const FOContainer = ({ diceState }) => {
   } = diceState;
   return (
     <Container>
+      <Merchant />
       <Inventory
         handleAdd={handleAdd}
         diceChange={diceChange}
