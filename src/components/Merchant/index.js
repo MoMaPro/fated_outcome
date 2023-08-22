@@ -1,5 +1,5 @@
 const Merchant = ({ fatedOutcome }) => {
-  return <p>fated Outcome:</p>;
+  return <p>fated outcome:{` ${fatedOutcome}`}</p>;
 };
 
 export default Merchant;
