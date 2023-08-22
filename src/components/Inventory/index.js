@@ -1,14 +1,23 @@
 import styled from "styled-components";
 import InventoryItem from "./InventoryItem";
+import ModifierModal from "./ModifierModal";
 import theme from "../../styles/theme";
 import * as images from "./wares";
 import { useState } from "react";
 
-const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
+const Inventory = ({
+  handleAdd,
+  diceChange,
+  clearDiceField,
+  handleModifier,
+  modifier,
+}) => {
   const [modalActive, setModalActive] = useState(false);
+
   const modalHandler = () => {
     setModalActive(!modalActive);
   };
+
   return (
     <InventoryStyle>
       <div className="header">
@@ -26,9 +35,11 @@ const Inventory = ({ handleAdd, diceChange, clearDiceField }) => {
         </ClearStyle>
       </div>
       {modalActive && (
-        <ModalStyle className="modifier-modal">
-          <p>This is where the modal will pop up</p>
-        </ModalStyle>
+        <ModifierModal
+          handleModal={modalHandler}
+          handleModifier={handleModifier}
+          modifier={modifier}
+        />
       )}
       <div className="table">
         <div className="row">

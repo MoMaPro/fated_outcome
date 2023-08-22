@@ -2,12 +2,19 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const DiceState = () => {
+  const [modifier, setModifier] = useState(0);
   const [dice, setDice] = useState([]);
+
+  const handleModifier = (number) => {
+    setModifier(number);
+  };
 
   useEffect(() => {
     if (dice.length > 0)
-      console.log(dice.reduce((acc, die) => acc + die.value, 0));
-  }, [dice]);
+      console.log(
+        dice.reduce((acc, die) => acc + die.value, 0) + Number(modifier)
+      );
+  }, [dice, modifier]);
 
   const handleRemoval = (dIndex) => {
     setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
@@ -32,7 +39,15 @@ const DiceState = () => {
     setDice([]);
   };
 
-  return { dice, handleRemoval, diceChange, handleAdd, clearDiceState };
+  return {
+    dice,
+    handleRemoval,
+    diceChange,
+    handleAdd,
+    clearDiceState,
+    handleModifier,
+    modifier,
+  };
 };
 
 function randomizor(dType) {

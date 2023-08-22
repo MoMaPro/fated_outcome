@@ -5,14 +5,23 @@ import Inventory from "../Inventory";
 import theme from "../../styles/theme";
 
 const FOContainer = ({ diceState }) => {
-  const { dice, handleRemoval, diceChange, handleAdd, clearDiceState } =
-    diceState;
+  const {
+    dice,
+    handleRemoval,
+    diceChange,
+    handleAdd,
+    clearDiceState,
+    handleModifier,
+    modifier,
+  } = diceState;
   return (
     <Container>
       <Inventory
         handleAdd={handleAdd}
         diceChange={diceChange}
         clearDiceField={clearDiceState}
+        handleModifier={handleModifier}
+        modifier={modifier}
       ></Inventory>
       <DiceField dice={dice} handleRemoval={handleRemoval} />
     </Container>
