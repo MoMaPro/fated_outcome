@@ -8,6 +8,11 @@ const ModifierModal = ({ handleModal, handleModifier, modifier }) => {
     setDisplayInput(e.target.value);
   };
 
+  const handleApply = () => {
+    handleModifier(displayInput);
+    handleModal();
+  };
+
   return (
     <ModalStyle className="modifier-modal">
       <div className="off-click" onClick={handleModal}></div>
@@ -18,7 +23,7 @@ const ModifierModal = ({ handleModal, handleModifier, modifier }) => {
           onChange={handleInput}
           value={displayInput}
         ></input>
-        <button onClick={() => handleModifier(displayInput)}>Apply</button>
+        <button onClick={handleApply}>Apply</button>
       </div>
     </ModalStyle>
   );
