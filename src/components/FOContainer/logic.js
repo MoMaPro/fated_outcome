@@ -50,6 +50,7 @@ const DiceState = () => {
     clearDiceState,
     handleModifier,
     modifier,
+    total,
   };
 };
 

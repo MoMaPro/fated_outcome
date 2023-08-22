@@ -14,10 +14,11 @@ const FOContainer = ({ diceState }) => {
     clearDiceState,
     handleModifier,
     modifier,
+    total,
   } = diceState;
   return (
     <Container>
-      <Merchant />
+      <Merchant fatedOutcome={total} />
       <Inventory
         handleAdd={handleAdd}
         diceChange={diceChange}
