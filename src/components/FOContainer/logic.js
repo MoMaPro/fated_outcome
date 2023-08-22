@@ -4,17 +4,20 @@ import { useState } from "react";
 const DiceState = () => {
   const [modifier, setModifier] = useState(0);
   const [dice, setDice] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const handleModifier = (number) => {
     setModifier(number);
   };
 
   useEffect(() => {
-    if (dice.length > 0)
-      console.log(
-        dice.reduce((acc, die) => acc + die.value, 0) + Number(modifier)
-      );
-  }, [dice, modifier]);
+    if (dice.length > 0) {
+      const newTotal =
+        dice.reduce((acc, die) => acc + die.value, 0) + Number(modifier);
+      setTotal(newTotal);
+      console.log(newTotal);
+    }
+  }, [dice, modifier, setTotal]);
 
   const handleRemoval = (dIndex) => {
     setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
@@ -47,6 +50,7 @@ const DiceState = () => {
     clearDiceState,
     handleModifier,
     modifier,
+    total,
   };
 };
 
