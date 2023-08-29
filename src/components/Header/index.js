@@ -10,7 +10,6 @@ const Header = () => {
   return (
     <header
       style={{
-        position: "fixed",
         border: `solid 2px ${theme.secondary}`,
         backgroundColor: theme.primary,
         width: "100%",
