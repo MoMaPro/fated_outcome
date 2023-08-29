@@ -10,12 +10,12 @@ const DiceState = () => {
     setModifier(number);
   };
 
+  //Dice total & modifier
   useEffect(() => {
     if (dice.length > 0) {
       const newTotal =
         dice.reduce((acc, die) => acc + die.value, 0) + Number(modifier);
       setTotal(newTotal);
-      console.log(newTotal);
     }
   }, [dice, modifier, setTotal]);
 
