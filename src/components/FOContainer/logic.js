@@ -23,14 +23,20 @@ const DiceState = () => {
     setDice((prevDice) => prevDice.filter((_, index) => index !== dIndex));
   };
 
+  //Dice randomizer
   const diceChange = () => {
-    setDice((oldDice) =>
-      oldDice.map(({ dType }) => {
-        return { dType: dType, value: randomizor(dType) };
-      })
-    );
+    if (dice.length === 0) {
+      handleAdd("d20");
+    } else {
+      setDice((oldDice) =>
+        oldDice.map(({ dType }) => {
+          return { dType: dType, value: randomizor(dType) };
+        })
+      );
+    }
   };
 
+  //Adds dice
   const handleAdd = (dType) => {
     setDice((prevDice) => [
       ...prevDice,
@@ -38,6 +44,7 @@ const DiceState = () => {
     ]);
   };
 
+  //Clears field
   const clearDiceState = () => {
     setDice([]);
   };
