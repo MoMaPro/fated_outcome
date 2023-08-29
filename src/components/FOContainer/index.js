@@ -33,6 +33,6 @@ const FOContainer = ({ diceState }) => {
 export default FOContainer;
 
 const Container = styled.div`
-  padding: 30px;
+  padding: 5px 15px 5px 15px;
   background-color: ${theme.primary};
 `;
