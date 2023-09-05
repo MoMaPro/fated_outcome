@@ -35,4 +35,5 @@ export default FOContainer;
 const Container = styled.div`
   padding: 5px 15px 5px 15px;
   background-color: ${theme.primary};
+  color: ${theme.tertiary};
 `;
