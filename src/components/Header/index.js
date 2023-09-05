@@ -11,7 +11,7 @@ const Header = () => {
     <header
       style={{
         border: `solid 2px ${theme.secondary}`,
-        backgroundColor: theme.primary,
+        backgroundColor: theme.tertiary,
         width: "100%",
         marginBottom: "3px",
       }}

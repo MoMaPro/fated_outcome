@@ -106,8 +106,9 @@ export default Inventory;
 const InventoryStyle = styled.div`
   display: flex;
   flex-direction: column;
-  border: solid ${theme.secondary} 3px;
+  border: solid ${theme.quaternary} 3px;
   color: ${theme.secondary};
+  background-color: ${theme.tertiary};
 
   .header {
     display: flex;
@@ -118,7 +119,7 @@ const InventoryStyle = styled.div`
   }
 
   .table {
-    border-top: solid ${theme.secondary} 3px;
+    border-top: solid ${theme.quaternary} 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,7 +134,7 @@ const InventoryStyle = styled.div`
     border-radius: 30px;
     border: solid ${theme.secondary} 5px;
     background-color: ${theme.secondary};
-    color: ${theme.primary};
+    color: ${theme.tertiary};
   }
 `;
 const ModifierStyle = styled.div`
