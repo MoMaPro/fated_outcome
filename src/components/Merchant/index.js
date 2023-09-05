@@ -8,7 +8,11 @@ const Merchant = ({ fatedOutcome }) => {
       <img src={meowlin} alt="meowlin" width="300px" />
       <SpeechStyle>
         <img src={speechBubble} alt="speechBubble" width="200px" />
-        <p>fated outcome:{` ${fatedOutcome}`}</p>
+        <p>
+          {fatedOutcome !== undefined
+            ? `You rolled ${fatedOutcome}`
+            : "You're all gonna die kids"}
+        </p>
       </SpeechStyle>
     </div>
   );
