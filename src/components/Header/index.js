@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header
       style={{
-        border: `solid 2px ${theme.secondary}`,
+        border: `solid 2px ${theme.quaternary}`,
         backgroundColor: theme.tertiary,
         width: "100%",
         marginBottom: "3px",
