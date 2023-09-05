@@ -4,7 +4,7 @@ import { useState } from "react";
 const DiceState = () => {
   const [modifier, setModifier] = useState(0);
   const [dice, setDice] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState();
 
   const handleModifier = (number) => {
     setModifier(number);
@@ -47,6 +47,7 @@ const DiceState = () => {
   //Clears field
   const clearDiceState = () => {
     setDice([]);
+    setTotal(undefined);
   };
 
   return {
