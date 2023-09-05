@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import meowlin from "./images/merchant.png";
 import speechBubble from "./images/speechRectangle.png";
 
 const Merchant = ({ fatedOutcome }) => {
   return (
-    <SpeechStyle>
-      <img src={speechBubble} alt="speechBubble" width={"200px"} />
-      <p>fated outcome:{` ${fatedOutcome}`}</p>
-    </SpeechStyle>
+    <div>
+      <img src={meowlin} alt="meowlin" width="300px" />
+      <SpeechStyle>
+        <img src={speechBubble} alt="speechBubble" width="200px" />
+        <p>fated outcome:{` ${fatedOutcome}`}</p>
+      </SpeechStyle>
+    </div>
   );
 };
 
