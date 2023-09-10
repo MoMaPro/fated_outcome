@@ -15,10 +15,20 @@ const FOContainer = ({ diceState }) => {
     handleModifier,
     modifier,
     total,
+    currentQuote,
+    setCurrentQuote,
+    quotearray,
+    shuffleArray,
   } = diceState;
   return (
     <Container>
-      <Merchant fatedOutcome={total} />
+      <Merchant
+        fatedOutcome={total}
+        currentQuote={currentQuote}
+        setCurrentQuote={setCurrentQuote}
+        quotearray={quotearray}
+        shuffleArray={shuffleArray}
+      />
       <Inventory
         handleAdd={handleAdd}
         diceChange={diceChange}
