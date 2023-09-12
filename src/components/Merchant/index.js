@@ -7,15 +7,17 @@ const Merchant = ({ fatedOutcome, currentQuote }) => {
   return (
     <div>
       <SpeechStyle>
-        <img src={speechBubble} alt="speechBubble" width="280px" />
-        <div>
-          {fatedOutcome !== undefined ? (
-            <p>
-              You rolled <strong>{fatedOutcome}</strong>
-            </p>
-          ) : (
-            <p>{[currentQuote]}</p>
-          )}
+        <div width="200px">
+          <img src={speechBubble} alt="speechBubble" width="300px" />
+          <p>
+            {fatedOutcome !== undefined ? (
+              <span>
+                You rolled <strong>{fatedOutcome}</strong>
+              </span>
+            ) : (
+              <span>{[currentQuote]}</span>
+            )}
+          </p>
         </div>
         <img src={meowlin} alt="meowlin" width="300px" />
       </SpeechStyle>
@@ -29,6 +31,7 @@ const SpeechStyle = styled.div`
   background-color: ${theme.quaternary};
   display: inline-block;
   position: relative;
+  border: dotted 5px ${theme.tertiary};
   img {
     position: relative;
   }
@@ -36,6 +39,7 @@ const SpeechStyle = styled.div`
     position: absolute;
     top: 10px;
     left: 30px;
+    padding: 0px 20px;
     color: ${theme.tertiary};
   }
 `;
