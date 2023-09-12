@@ -6,14 +6,18 @@ import theme from "../../styles/theme";
 const Merchant = ({ fatedOutcome, currentQuote }) => {
   return (
     <div>
-      <img src={meowlin} alt="meowlin" width="300px" />
       <SpeechStyle>
-        <img src={speechBubble} alt="speechBubble" width="300px" />
-        <p>
-          {fatedOutcome !== undefined
-            ? `You rolled ${fatedOutcome}`
-            : [currentQuote]}
-        </p>
+        <img src={speechBubble} alt="speechBubble" width="280px" />
+        <div>
+          {fatedOutcome !== undefined ? (
+            <p>
+              You rolled <strong>{fatedOutcome}</strong>
+            </p>
+          ) : (
+            <p>{[currentQuote]}</p>
+          )}
+        </div>
+        <img src={meowlin} alt="meowlin" width="300px" />
       </SpeechStyle>
     </div>
   );
