@@ -23,12 +23,7 @@ const Header = () => {
       <Link style={linkStyle} to="/homework">
         homework
       </Link>
-      <img
-        src="fatedLogo.png"
-        alt="Logo"
-        width="250"
-        tintColor={theme.secondary}
-      ></img>
+      <img src="fatedLogo.png" alt="Logo" width="250"></img>
     </header>
   );
 };
