@@ -32,5 +32,6 @@ const SpeechStyle = styled.div`
     position: absolute;
     top: 10px;
     left: 30px;
+    color: ${theme.tertiary};
   }
 `;
