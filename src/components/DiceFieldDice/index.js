@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import diceFace from "./DiceImages";
+import theme from "../../styles/theme";
 //container that holds dice
 
 const DiceFieldDice = ({ dType, value, handleClick, index }) => {
@@ -34,7 +35,7 @@ const DiceStyle = styled.div`
     align-items: center;
     text-align: center;
     border-radius: 30px;
-    background-color: pink;
+    background-color: ${theme.tertiary};
     width: 3rem;
     height: 3rem;
   }

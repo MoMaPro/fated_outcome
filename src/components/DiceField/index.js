@@ -1,9 +1,10 @@
+import theme from "../../styles/theme";
 import DiceFieldDice from "../DiceFieldDice";
 import styled from "styled-components";
 
 export default function DiceField({ dice, handleRemoval }) {
   return (
-    <FieldStyle style={{ background: "pink" }}>
+    <FieldStyle style>
       {dice &&
         dice.map((item, index) => (
           <DiceFieldDice
@@ -22,4 +23,7 @@ const FieldStyle = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: ${theme.tertiary};
+  border-radius: 30px;
+  border: solid ${theme.secondary} 5px;
 `;
