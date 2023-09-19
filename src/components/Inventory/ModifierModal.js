@@ -50,9 +50,14 @@ const ModalStyle = styled.div`
     left: 25%;
     background-color: ${theme.tertiary};
     color: ${theme.primary};
-    width: 50%;
+    width: fit-content;
+    padding: 20px;
     border-radius: 30px;
     align-self: center;
     text-align: center;
+
+    input {
+      margin: 20px;
+    }
   }
 `;
