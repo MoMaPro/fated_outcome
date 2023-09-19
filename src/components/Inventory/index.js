@@ -140,11 +140,14 @@ const InventoryStyle = styled.div`
 const ModifierStyle = styled.div`
   position: absolute;
   z-index: 9;
+  width: 1.5rem;
   top: 5px;
   left: 5px;
   border-radius: 30px;
-  background-color: ${theme.secondary};
-  color: ${theme.primary};
+  border: solid 1px;
+  text-align: center;
+  background-color: ${theme.quaternary};
+  color: ${theme.quinary};
 `;
 
 const RollStyle = styled.button`
