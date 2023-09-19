@@ -86,7 +86,11 @@ const Inventory = ({
             productImage={images.D100button}
           />
           <div style={{ position: "relative" }}>
-            <ModifierStyle>{modifier}</ModifierStyle>
+            {modifier !== "0" && (
+              <ModifierStyle onClick={modalHandler}>
+                <h3>{modifier}</h3>
+              </ModifierStyle>
+            )}
             <InventoryItem
               iFunction={modalHandler}
               dType="mod"
@@ -139,11 +143,15 @@ const InventoryStyle = styled.div`
 `;
 const ModifierStyle = styled.div`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9;
-  width: 1.5rem;
-  top: 5px;
-  left: 5px;
-  border-radius: 30px;
+  width: 2.5rem;
+  height: 2.5rem;
+  top: -5px;
+  left: -5px;
+  border-radius: 300px;
   border: solid 1px;
   text-align: center;
   background-color: ${theme.quaternary};
