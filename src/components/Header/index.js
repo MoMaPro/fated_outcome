@@ -10,9 +10,8 @@ const Header = () => {
   return (
     <header
       style={{
-        position: "fixed",
-        border: `solid 2px ${theme.secondary}`,
-        backgroundColor: theme.primary,
+        border: `solid 2px ${theme.quaternary}`,
+        backgroundColor: theme.tertiary,
         width: "100%",
         marginBottom: "3px",
       }}
@@ -24,6 +23,7 @@ const Header = () => {
       <Link style={linkStyle} to="/homework">
         homework
       </Link>
+      <img src="fatedLogo.png" alt="Logo" width="250"></img>
     </header>
   );
 };
