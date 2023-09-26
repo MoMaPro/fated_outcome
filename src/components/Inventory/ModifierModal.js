@@ -49,7 +49,7 @@ const ModalStyle = styled.div`
     top: 20%;
     left: 25%;
     background-color: ${theme.tertiary};
-    color: ${theme.primary};
+    color: ${theme.secondary};
     width: fit-content;
     padding: 20px;
     border-radius: 30px;
@@ -58,6 +58,12 @@ const ModalStyle = styled.div`
 
     input {
       margin: 20px;
+    }
+
+    button {
+      background-color: ${theme.secondary};
+      color: ${theme.quaternary};
+      border-radius: 30px;
     }
   }
 `;
