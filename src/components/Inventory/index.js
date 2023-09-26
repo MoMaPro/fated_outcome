@@ -44,24 +44,28 @@ const Inventory = ({
       <div className="table">
         <div className="row">
           <InventoryItem
+            index={0}
             iFunction={handleAdd}
             dType="d4"
             productImage={images.D4button}
           />
 
           <InventoryItem
+            index={1}
             iFunction={handleAdd}
             dType="d6"
             productImage={images.D6button}
           />
 
           <InventoryItem
+            index={2}
             iFunction={handleAdd}
             dType="d8"
             productImage={images.D8button}
           />
 
           <InventoryItem
+            index={3}
             iFunction={handleAdd}
             dType="d10"
             productImage={images.D10button}
@@ -69,18 +73,21 @@ const Inventory = ({
         </div>
         <div className="row">
           <InventoryItem
+            index={0}
             iFunction={handleAdd}
             dType="d12"
             productImage={images.D12button}
           />
 
           <InventoryItem
+            index={1}
             iFunction={handleAdd}
             dType="d20"
             productImage={images.D20button}
           />
 
           <InventoryItem
+            index={2}
             iFunction={handleAdd}
             dType="d100"
             productImage={images.D100button}
@@ -92,6 +99,7 @@ const Inventory = ({
               </ModifierStyle>
             )}
             <InventoryItem
+              index={3}
               iFunction={modalHandler}
               dType="mod"
               productImage={images.modEelBlack}
@@ -111,6 +119,7 @@ const InventoryStyle = styled.div`
   display: flex;
   flex-direction: column;
   border: solid ${theme.quaternary} 3px;
+  height: fit-content;
   color: ${theme.secondary};
   background-color: ${theme.tertiary};
 
@@ -129,8 +138,7 @@ const InventoryStyle = styled.div`
     justify-content: center;
   }
   .row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     padding: 0px;
     margin: 0;
   }
