@@ -30,15 +30,15 @@ const FOContainer = ({ diceState }) => {
           handleModifier={handleModifier}
           modifier={modifier}
         ></Inventory>
-        <Merchant
-          fatedOutcome={total}
-          currentQuote={currentQuote}
-          setCurrentQuote={setCurrentQuote}
-          quotearray={quotearray}
-          shuffleArray={shuffleArray}
-        />
+        <DiceField dice={dice} handleRemoval={handleRemoval} />
       </div>
-      <DiceField dice={dice} handleRemoval={handleRemoval} />
+      <Merchant
+        fatedOutcome={total}
+        currentQuote={currentQuote}
+        setCurrentQuote={setCurrentQuote}
+        quotearray={quotearray}
+        shuffleArray={shuffleArray}
+      />
     </Container>
   );
 };
@@ -51,5 +51,8 @@ const Container = styled.div`
   .shop-front {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 760px) {
+      flex-direction: column;
+    }
   }
 `;

@@ -120,6 +120,7 @@ const InventoryStyle = styled.div`
   flex-direction: column;
   border: solid ${theme.quaternary} 3px;
   height: fit-content;
+  width: fit-content;
   color: ${theme.secondary};
   background-color: ${theme.tertiary};
 
@@ -136,11 +137,17 @@ const InventoryStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    align-self: center;
   }
   .row {
     display: flex;
+    justify-content: center;
     padding: 0px;
     margin: 0;
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+    }
   }
   .menu-button {
     border-radius: 30px;

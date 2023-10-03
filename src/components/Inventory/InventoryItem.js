@@ -13,14 +13,16 @@ const InventoryItem = ({ iFunction, dType, productImage, index }) => {
 export default InventoryItem;
 
 const ItemStyle = styled.div`
-  width: 126px;
+  width: 10rem;
   height: 100%;
   background: url(${displayTray});
   background-size: 90%;
   background-repeat: no-repeat;
-  margin: 0 -16px 0 0;
+  margin: 0;
   padding: 0;
-
+  @media (max-width: 600px) {
+    width: 9rem;
+  }
   &:hover {
     cursor: pointer;
   }

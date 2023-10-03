@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import theme from "../../styles/theme";
+import styled from "styled-components";
 
 const Header = () => {
   const linkStyle = {
@@ -8,14 +9,7 @@ const Header = () => {
     color: theme.secondary,
   };
   return (
-    <header
-      style={{
-        border: `solid 2px ${theme.quaternary}`,
-        backgroundColor: theme.tertiary,
-        width: "100%",
-        marginBottom: "3px",
-      }}
-    >
+    <HeaderStyle>
       <Link style={linkStyle} to="/">
         home
       </Link>
@@ -24,8 +18,14 @@ const Header = () => {
         homework
       </Link>
       <img src="fatedLogo.png" alt="Logo" width="250"></img>
-    </header>
+    </HeaderStyle>
   );
 };
 
 export default Header;
+
+const HeaderStyle = styled.header`
+  border-bottom: solid 2px ${theme.quaternary};
+  background-color: ${theme.tertiary};
+  width: 100%;
+`;
