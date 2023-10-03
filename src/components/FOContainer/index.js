@@ -51,6 +51,7 @@ const Container = styled.div`
   .shop-front {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     @media (max-width: 760px) {
       flex-direction: column;
     }

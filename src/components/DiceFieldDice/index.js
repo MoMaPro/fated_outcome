@@ -6,6 +6,7 @@ import theme from "../../styles/theme";
 const DiceFieldDice = ({ dType, value, handleClick, index }) => {
   return (
     <DiceStyle dType={dType} onClick={() => handleClick(index)}>
+      <img src={diceFace(dType)} alt="diceFace" />
       <div>
         <h3>{value}</h3>
       </div>
@@ -17,17 +18,23 @@ export default DiceFieldDice;
 
 const DiceStyle = styled.div`
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  flex-basis: calc(20% - 0px);
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: ${({ dType }) => `url(${diceFace(dType)})`};
-  width: 150px;
-  height: 150px;
+  box-sizing: content-box;
+  overflow: hidden;
+  max-width: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 
   div {
+    position: absolute;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
