@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import meowlin from "./images/merchant.png";
+import meowlin from "./images/merchant.gif";
 import speechBubble from "./images/speechRectangle.png";
 import theme from "../../styles/theme";
 
@@ -7,8 +7,8 @@ const Merchant = ({ fatedOutcome, currentQuote }) => {
   return (
     <div>
       <SpeechStyle>
-        <div width="200px">
-          <img src={speechBubble} alt="speechBubble" width="300px" />
+        <div width="90%" height="200px">
+          {/* <img src={speechBubble} alt="speechBubble" width="300px" /> */}
           <p>
             {fatedOutcome !== undefined ? (
               <span>
@@ -37,8 +37,8 @@ const SpeechStyle = styled.div`
   }
   p {
     position: absolute;
-    top: 10px;
-    left: 30px;
+    top: 50px;
+    right: -230px;
     padding: 0px 20px;
     color: ${theme.tertiary};
   }
